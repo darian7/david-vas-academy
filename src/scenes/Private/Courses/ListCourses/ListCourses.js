@@ -7,7 +7,6 @@ import { useHistory } from 'react-router';
 import { HomeCard } from '../../components/Cards/home-card/home-card';
 import { HomeCardSkeleton } from '../../components/SkeletonScreens/HomeCardSkeleton/HomeCardSkeleton';
 import { course as courseActions } from '../../../../services/Course/CourseActions'
-import { stateCourse } from '../../../../common/config/Environments';
 
 export const ListCourses = ({ }) => {
 
@@ -17,9 +16,7 @@ export const ListCourses = ({ }) => {
   let history = useHistory()
 
   useEffect(() => {
-    let params = { offset: 1, limit: 10 }
-    if (stateCourse)
-      params = { ...params, state: stateCourse }
+    let params = { ...params, state: "active" }
 
     dispatch(courseActions.getCourses(params))
   }, [])
