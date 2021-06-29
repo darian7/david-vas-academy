@@ -1,0 +1,39 @@
+.social-btns {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  bottom: 20%;
+
+  &-item {
+    background-color: #e37f2d;
+    cursor: pointer;
+    width: 80px;
+    height: 50px;
+    transition: all .3s ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+    padding-right: 10px;
+
+    &:hover {
+      width: 100px;
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
+      fill: #ffffff;
+    }
+  }
+
+  &.is-visible {
+    display: block;
+  }
+
+  @media (max-width: $medium) {
+    &.is-visible {
+      display: none;
+    }
+  }
+}

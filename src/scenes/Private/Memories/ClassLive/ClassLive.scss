@@ -1,0 +1,100 @@
+.class-live {
+  &-cards {
+    display: flex;
+    margin-top: 3em;
+    margin-right: 200px;
+    flex-wrap: wrap;
+
+    &-responsive {
+      display: none;
+    }
+  }
+
+  .memory-card {
+    width: fit-content;
+    min-height: 290px;
+    margin: 0 2em 2em;
+    justify-content: space-between;
+
+    &-content {
+      display: grid;
+      width: 240px;
+      height: 290px;
+      margin: auto;
+      overflow: hidden;
+
+      h2 {
+        padding: .5em;
+      }
+
+      img {
+        object-fit: cover;
+      }
+
+      background: #E8E8E8;
+      box-shadow: 4px 4px 6px #000000FC;
+      border-radius: 25px 25px 0 0;
+      text-align: center;
+    }
+
+    a[type="button"] {
+      margin: 1em auto;
+      text-transform: none;
+    }
+  }
+
+  @media (max-width: $medium) {
+    margin-right: 0;
+
+    &-cards {
+      display: none;
+
+      &-responsive {
+        @include flex-center;
+        margin-top: 2em;
+
+        .btn {
+
+          &-right,
+          &-left {
+            position: absolute;
+            transition: all 1s ease;
+          }
+
+          &-right {
+            left: 1em;
+            transform: rotate(90deg);
+          }
+
+          &-left {
+            transform: rotate(-90deg);
+            right: 1em;
+          }
+        }
+
+        .memory-card {
+          flex-basis: 100%;
+          transition: all .5s ease;
+          margin: auto 1em;
+        }
+
+        .is-disabled {
+          @include is-disabled;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .class-live-cards-responsive {
+      .btn-left {
+        right: 0;
+      }
+
+      .btn-right {
+        left: 0;
+      }
+    }
+  }
+}

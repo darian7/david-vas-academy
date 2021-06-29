@@ -1,0 +1,115 @@
+//Any generic styles for the site. Shouldn't have any classes or ids for selectors.
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: $font;
+  box-sizing: border-box;
+}
+
+#root {
+  overflow: auto;
+  min-height: 100vh;
+  height: auto;
+  background: white;
+  background-image: url("../assets/background-top.png"),
+    url("../assets/background-bottom.png");
+  //  background-attachment: fixed;
+  background-position: top left,
+    bottom right;
+  background-repeat: no-repeat;
+  background-size: 50%;
+
+  @media (max-width: $medium) {
+    background-size: 100%;
+  }
+}
+
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 600;
+  line-height: 1em;
+}
+
+button {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+
+  &[type="primary"] {
+    @include flex-center;
+    background: $primary;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bolder;
+    height: auto;
+    padding: .5em 1em;
+    transition: all .5s ease-in;
+    border: 1px solid #707070;
+    outline: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+select,
+option,
+input[type="radio"] {
+  cursor: pointer;
+}
+
+select {
+  background: url('data:image/svg+xml;utf8,<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L6 6L11 1" stroke="black" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat 95% 50%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    font-weight: 800;
+  }
+
+  &[type="button"] {
+    @include flex-center;
+    background: $primary 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    width: fit-content;
+    color: white;
+    padding: .8em 2em;
+    line-height: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+h1,
+h2 {
+  font-weight: bold;
+}
+
+.transition-page {
+  @include fade-in;
+}

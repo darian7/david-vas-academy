@@ -1,0 +1,137 @@
+.tutorial-card {
+  width: 320px;
+  height: 360px;
+  text-align: center;
+  background: $bkg-gray 0% 0% no-repeat padding-box;
+  box-shadow: 4px 8px 6px #00000029;
+  border-radius: 20px;
+  margin: 0 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8em 0;
+
+  &-banner {
+    min-height: 165px;
+    border-bottom: 1px solid #bcbcbc;
+    margin-bottom: 0.5em;
+
+    h2 {
+      text-align: left;
+      font-size: larger;
+      font-weight: 600;
+      margin: 0.5em 1.2em;
+    }
+
+    .ant-skeleton-element .ant-skeleton-image {
+      width: auto;
+      height: auto;
+    }
+
+    .ant-skeleton-element .ant-skeleton-image-svg {
+      width: auto;
+      min-height: 165px;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &-content {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    > div {
+      margin: 5px 25px;
+    }
+  }
+
+  &-percentage {
+    @include flex-center;
+    position: relative;
+
+    .clock-cover {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+    }
+
+    .ant-progress-circle.ant-progress-status-success .ant-progress-text {
+      color: black;
+    }
+
+    .ant-progress-text {
+      font-weight: 600;
+    }
+  }
+
+  &-content-data {
+    text-align: left;
+    flex-grow: 1;
+
+    > div {
+      margin-bottom: 5px;
+      font-size: small;
+
+      > svg {
+        margin-right: 0.5em;
+        height: 1em;
+        width: 2em;
+
+        .a {
+          fill: black;
+        }
+      }
+    }
+
+    p {
+      text-align: left;
+      letter-spacing: 0px;
+      color: #a8a8a8;
+      opacity: 1;
+      font-size: small;
+    }
+  }
+
+  &-content-link {
+    text-align: right;
+    margin: 20px 0 20px 20px;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+
+    p {
+      color: #eb6107;
+      align-items: center;
+      font-size: large;
+      font-weight: 500;
+      margin-right: 15px;
+    }
+  }
+
+  @media (max-width: $medium) {
+    height: auto;
+    margin: auto;
+
+    &-content-data {
+      margin: 10px 0 10px 10px;
+
+      > div {
+        font-size: small;
+      }
+
+      p {
+        margin: 0 1em;
+      }
+    }
+
+    .ant-progress-circle .ant-progress-inner {
+      width: 60px !important;
+      height: 60px !important;
+      font-size: small !important;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    width: 75vw;
+  }
+}

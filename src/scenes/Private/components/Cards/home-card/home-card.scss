@@ -1,0 +1,112 @@
+.home-card {
+  max-width: 290px;
+  height: 360px;
+  text-align: center;
+  background: $bkg-gray 0% 0% no-repeat padding-box;
+  box-shadow: 4px 8px 6px #00000029;
+  border-radius: 20px;
+
+  &-banner {
+    min-height: 165px;
+    border-bottom: 1px solid #BCBCBC;
+    margin-bottom: .5em;
+
+    .ant-skeleton-element .ant-skeleton-image {
+      width: auto;
+      height: auto;
+    }
+
+    .ant-skeleton-element .ant-skeleton-image-svg {
+      width: auto;
+      min-height: 165px;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &-content {
+    overflow: auto;
+
+    h2 {
+      font-size: larger;
+    }
+
+    >div {
+      margin: 10px 20px;
+      display: flex;
+    }
+  }
+
+  &-percentage {
+    @include flex-center;
+    position: relative;
+
+    .clock-cover {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+    }
+
+    .ant-progress-circle.ant-progress-status-success .ant-progress-text {
+      color: black;
+    }
+
+    .ant-progress-text {
+      font-weight: 600;
+    }
+
+
+    >div {}
+  }
+
+  &-content-data {
+    text-align: left;
+    margin: 20px 0 20px 20px;
+
+    >div {
+      margin-bottom: 5px;
+      font-size: smaller;
+
+      >svg {
+        margin-right: .5em;
+        height: 1em;
+        width: 2em;
+
+        .a {
+          fill: black;
+        }
+      }
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: x-small;
+      font-weight: normal;
+    }
+  }
+
+  @media (max-width: $medium) {
+    height: auto;
+    max-width: 240px;
+    margin: auto;
+
+    &-content-data {
+      margin: 10px 0 10px 10px;
+
+      >div {
+        font-size: small;
+      }
+
+      p {
+        margin: 0 1em;
+      }
+    }
+
+    .ant-progress-circle .ant-progress-inner {
+      width: 60px !important;
+      height: 60px !important;
+      font-size: small !important;
+    }
+  }
+
+}

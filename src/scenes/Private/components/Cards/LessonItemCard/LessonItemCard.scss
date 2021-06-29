@@ -1,0 +1,39 @@
+.lesson-item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em .5em .5em 1em;
+  border-bottom: 1px solid #707070;
+  @include is-disabled;
+
+  p {
+    margin: 1em .5em;
+    flex: 1;
+  }
+
+  svg {
+    margin: 0 1em;
+  }
+
+  &--success {
+    opacity: 1;
+    border-bottom: 1px solid #3bb54a;
+    background-color: #3bb54a26;
+    cursor: pointer;
+
+    svg path {
+      fill: #3bb54a;
+    }
+  }
+
+  &--current {
+    cursor: pointer;
+    opacity: 1;
+    border-bottom: 1px solid #707070;
+    background-color: #ffffff;
+
+    svg path {
+      fill: $primary;
+    }
+  }
+}

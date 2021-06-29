@@ -1,0 +1,123 @@
+.course-progress-skeleton {
+  max-width: 1440px;
+  padding: 5em 200px 100px 300px;
+  margin: auto;
+
+  &-header {
+    display: flex;
+
+    &-course {
+      flex-basis: 50%;
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+
+      >p {
+        margin-bottom: 1em;
+        color: #585858;
+      }
+    }
+
+    h3 {
+      color: #676767;
+      text-align: center;
+      font-size: medium;
+      font-weight: normal;
+      margin-bottom: 30px;
+    }
+
+    &-progress {
+      margin: 0 30px;
+
+      .ant-progress-circle .ant-progress-text {
+        background: #858585;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        @include flex-center;
+        color: white;
+        font-size: x-large;
+        font-weight: 600;
+      }
+    }
+
+    &-detail {
+      color: #676767;
+
+      >div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5em;
+
+        div {
+          width: 100%;
+        }
+      }
+
+      svg {
+        stroke: $primary;
+        height: 21px;
+        width: 32px;
+        margin-right: .5em;
+      }
+    }
+  }
+
+  &-list {
+    &-modules {
+      div {
+        width: 100%;
+      }
+    }
+
+    &-module {}
+  }
+
+  @media (max-width: $medium) {
+    padding: 5em 100px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 5em;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 1em;
+
+    &-header {
+      flex-direction: column;
+
+      &-course {
+        order: 2;
+        margin: 0;
+        text-align: center;
+
+        >a {
+          margin: auto;
+        }
+
+        h1 {
+          display: none;
+        }
+      }
+
+      &-progress {
+        order: 1;
+        margin: 0;
+        text-align: center;
+      }
+
+      &-detail {
+        order: 3;
+        margin: 0;
+        text-align: center;
+        margin-top: 2em;
+
+        >div {
+          margin: .5em auto;
+          width: 150px;
+        }
+      }
+    }
+  }
+}

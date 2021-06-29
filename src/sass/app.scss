@@ -1,0 +1,56 @@
+//libraries
+//@import '~antd/dist/antd.css';
+
+@import "~antd/lib/progress/style/index";
+@import "~antd/lib/skeleton/style/index";
+@import "~antd/lib/avatar/style/index";
+@import "~antd/lib/dropdown/style/index";
+@import "~antd/lib/menu/style/index";
+
+@import "./reset";
+@import "./variables";
+@import "./mixins";
+@import "./elements";
+
+// Pages
+//@import "../scenes/Home/Home";
+@import "../scenes/Private/Courses/ListCourses/ListCourses";
+@import "../scenes/Private/Courses/ProfileCourse/ProfileCourse";
+@import "../scenes/Private/Courses/ProgressCourse/ProgressCourse";
+@import "../scenes/Private/FrequentQuestions/FrequentQuestions";
+@import "../scenes/Private/Events/Events";
+@import "../scenes/Private/ProfileUser/ProfileUser";
+@import "../scenes/Private/Module/Module";
+@import "../scenes/Private/Memories/ClassLive/ClassLive";
+@import "../scenes/Private/Memories/ClassLiveList/ClassLiveList";
+@import "../scenes/Private/Tutorials/TutorialList/TutorialList";
+@import "../scenes/Private/Tutorials/Tutorial/Tutorial";
+@import "../scenes/Private/Tools/Tool/Tool";
+@import "../scenes/Private/Tools/ToolList/ToolList";
+@import "../scenes/Public/Login/Login";
+
+// Component
+@import "../scenes/Private/components/Layout/Header/Header";
+@import "../scenes/Private/components/Layout/ProfileMenu/ProfileMenu";
+@import "../scenes/Private/components/Modals/Modal";
+@import "../scenes/Private/components/Cards/home-card/home-card";
+@import "../scenes/Private/components/Cards/list-card/ListCard";
+@import "../scenes/Private/components/Cards/ModuleCard/ModuleCard";
+@import "../scenes/Private/components/Cards/TutorialCard/TutorialCard";
+@import "../scenes/Private/components/Cards/ToolCard/ToolCard";
+@import "../scenes/Private/components/Cards/LessonItemCard/LessonItemCard";
+@import "../scenes/Private/Module/components/ProfileModule/ProfileModule";
+@import "../scenes/Private/Module/components/ProfileLesson/ProfileLesson";
+@import "../scenes/Private/Module/components/Quiz/Quiz";
+@import "../scenes/Private/components/Layout/MenuResponsive/MenuResponsive";
+@import "../components/SocialButtons/SocialButtons";
+
+//Modals
+@import "../scenes/Private/components/Files/Files";
+
+// Skeletons
+@import "../scenes/Private/components/SkeletonScreens/HomeCardSkeleton/HomeCardSkeleton";
+@import "../scenes/Private/components/SkeletonScreens/MemoryCardSkeleton/MemoryCardSkeleton";
+@import "../scenes/Private/components/SkeletonScreens/ProgressCourseSkeleton/ProgressCourseSkeleton";
+@import "../scenes/Private/components/SkeletonScreens/ModuleSkeleton/ModuleSkeleton";
+@import "../scenes/Private/components/SkeletonScreens/TutotialCardSkeleton/TutotialCardSkeleton";

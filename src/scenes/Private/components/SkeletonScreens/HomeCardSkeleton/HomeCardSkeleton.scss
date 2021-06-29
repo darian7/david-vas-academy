@@ -1,0 +1,59 @@
+.home-card-skeleton {
+  width: 290px;
+  height: 360px;
+  background: $bkg-gray 0% 0% no-repeat padding-box;
+  box-shadow: 4px 8px 6px #00000029;
+  border-radius: 20px;
+
+  .ant-skeleton-element {
+    display: flex;
+  }
+
+
+  &-banner {
+    min-height: 165px;
+    border-radius: 20px 20px 0 0;
+    border-bottom: 1px solid #BCBCBC;
+    margin-bottom: 1em;
+    background: -webkit-gradient(linear, left top, right top, color-stop(25%, #f2f2f2), color-stop(37%, #e6e6e6), color-stop(63%, #f2f2f2));
+    background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%);
+    background-size: 400% 100%;
+    -webkit-animation: ant-skeleton-loading 1.4s ease infinite;
+    animation: ant-skeleton-loading 1.4s ease infinite;
+  }
+
+  &-content {
+    >div {
+      margin: 10px 20px;
+      display: flex;
+    }
+  }
+
+  &-percentage {
+    @include flex-center;
+  }
+
+  &-content-data {
+    width: 100%;
+    margin: 20px 0 20px 20px;
+
+    >div {
+      margin-bottom: 5px;
+    }
+  }
+
+  @media (max-width: $medium) {
+
+    &-content>div {
+      flex-direction: column;
+    }
+
+    &-content-data {
+      >div {
+        display: inline;
+        margin-right: 2em;
+      }
+    }
+  }
+
+}

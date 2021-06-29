@@ -1,0 +1,129 @@
+.courses {
+
+  &-container {
+    max-width: 1440px;
+    padding-left: 300px;
+    margin: auto;
+  }
+
+  .welcome-banner {
+    margin: auto;
+    max-width: 1440px;
+    background: $bkg-gray;
+    height: 150px;
+
+    p {
+      max-width: 720px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 150px;
+      background: $bkg-gray;
+    }
+
+    >div {
+      text-align: left;
+      margin: auto;
+      overflow: auto;
+      height: 100%;
+      position: relative;
+    }
+
+    h2 {
+      color: $primary;
+      text-transform: uppercase;
+      text-shadow: 0px 3px 6px #00000029;
+      font-size: 2.5em;
+      margin: 20px 0 10px;
+    }
+
+    p {
+      font-weight: 600;
+
+      span {
+        font-weight: 800;
+        font-style: italic;
+      }
+    }
+  }
+
+  &-cards {
+    display: flex;
+    margin: 30px 200px auto 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    >a {
+      margin-bottom: 40px;
+      flex-basis: 30%;
+
+      &:hover {
+        font-weight: normal;
+      }
+    }
+
+    p {
+      min-width: 150px;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    &-container {
+      padding-left: 200px;
+    }
+
+    &-cards {
+      margin-right: 100px;
+    }
+  }
+
+  @media (max-width: $medium) {
+    &-container {
+      padding-left: 0;
+      padding: 0 2em;
+      overflow: hidden;
+    }
+
+    .welcome-banner {
+      h2 {
+        text-align: center;
+        font-size: 2em;
+      }
+
+      p {
+        text-align: center;
+        font-size: smaller;
+        margin: auto;
+      }
+
+    }
+
+    &-cards {
+      margin-right: 0;
+
+      p {
+        min-width: 120px;
+      }
+
+      >a {
+        margin: auto;
+        margin-bottom: 2em;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &-cards>div {
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
+    }
+  }
+}
