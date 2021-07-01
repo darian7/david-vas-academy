@@ -42,9 +42,6 @@ export const ListCourses = (
   return (
     <div style={{ backgroundColor: "white" }}>
       <div>
-        <h1 >
-          courses
-        </h1>
         <button onClick={goLogout} >
           {t(`button.logout`)}
         </button>
