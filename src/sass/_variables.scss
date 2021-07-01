@@ -1,14 +1,21 @@
-$font: 'Montserrat',
-sans-serif;
-$primary: #eb6107;
-$secondary: #999;
-$bkg-gray: #f3f3f3;
+$font: Raleway;
+$primary: #ffffff;
+$btn-line-form: #00aa16;
+$border-btn:#707070;
+$line-logo: #00aa15;
+
+$login-links:#CBC7C7;
+$social:#B9B9B9;
+
+$bkg-gradient: transparent linear-gradient(180deg, #000000 0%, #393939 100%) 0%
+  0% no-repeat padding-box;
+
 
 //Breakpoints
-$desktop: '1367px';
-$laptop: '1220px';
-$medium: '1025px';
-$tablet: '770px';
-$mobile: '451px';
+$desktop: "1367px";
+$laptop: "1220px";
+$medium: "1025px";
+$tablet: "770px";
+$mobile: "451px";
 
 //colors

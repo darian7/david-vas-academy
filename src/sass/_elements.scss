@@ -23,14 +23,7 @@ body {
   overflow: auto;
   min-height: 100vh;
   height: auto;
-  background: white;
-  background-image: url("../assets/background-top.png"),
-    url("../assets/background-bottom.png");
-  //  background-attachment: fixed;
-  background-position: top left,
-    bottom right;
-  background-repeat: no-repeat;
-  background-size: 50%;
+  background: transparent linear-gradient(180deg, #000000 0%, #393939 100%) 0% 0% no-repeat padding-box;
 
   @media (max-width: $medium) {
     background-size: 100%;
