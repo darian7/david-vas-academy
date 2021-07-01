@@ -1,7 +1,7 @@
 import { handleActions } from 'redux-actions';
 
 export const INITIAL_STATE = {
-  courses: [],
+  courses: undefined,
   course: undefined,
   loading: {
     getCourses: false,
@@ -23,7 +23,7 @@ export const INITIAL_STATE = {
 const reducer = handleActions({
   COURSE: {
     GET_COURSES: (state, { payload: { } }) => ({
-      ...state, 
+      ...state,
       loading: { ...state.loading, getCourses: true },
       success: { ...state.success, getCourses: false },
       error: { ...state.error, getCourses: false }
@@ -32,7 +32,7 @@ const reducer = handleActions({
       next(state, { payload: { courses } }) {
         return {
           ...state,
-          courses, 
+          courses,
           success: { ...state.success, getCourses: true },
           loading: { ...state.loading, getCourses: false }
         }
@@ -57,7 +57,7 @@ const reducer = handleActions({
       next(state, { payload: { course } }) {
         return {
           ...state,
-          course, 
+          course,
           success: { ...state.success, getCourse: true },
           loading: { ...state.loading, getCourse: false }
         }
@@ -78,9 +78,10 @@ const reducer = handleActions({
       error: { ...state.error, course_start: false }
     }),
     COURSE_START_RESPONSE: {
-      next(state, { payload: { } }) {
+      next(state, { payload: { courseId, user } }) {
         return {
           ...state,
+          courses: state.courses.map((course) => (course?.id == courseId ? { ...course, users: [user] } : course)),
           success: { ...state.success, course_start: true },
           loading: { ...state.loading, course_start: false }
         }

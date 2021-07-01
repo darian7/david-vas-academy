@@ -8,7 +8,7 @@ export const { course } = createActions({
     GET_COURSE: (id) => ({ id }),
     GET_COURSE_RESPONSE: (course) => ({ course }),
 
-    COURSE_START: (course, errorCallback) => ({ course, errorCallback }),
-    COURSE_START_RESPONSE: () => ({ }),
+    COURSE_START: (course, callback) => ({ course, callback }),
+    COURSE_START_RESPONSE: (courseId, user) => ({ courseId, user }),
   }
 })

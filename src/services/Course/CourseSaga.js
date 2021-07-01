@@ -1,7 +1,6 @@
-import { put, takeLatest, all } from 'redux-saga/effects';
+import { put, takeLatest, all, select } from 'redux-saga/effects';
 import Api from '../../common/Api/Api'
 import { course as courseActions } from "./CourseActions"
-import { push } from 'react-router-redux';
 
 function* getCourses({ payload }) {
   const response = yield Api.get("/course/get-all", payload.query)
@@ -18,7 +17,38 @@ function* getCourse({ payload }) {
   const response = yield Api.get(`/course/get-progress-course/${payload.id}`)
 
   if (response.ok) {
-    yield put(courseActions.getCourseResponse(response.payload));
+
+    let responseTem = []
+    yield Promise.all(response?.payload?.lessons?.map(async (lesson, index) => {
+
+      if (lesson?.video?.urlVimeo) {
+
+        const responseVimeo = await fetch(
+          `https://player.vimeo.com/video/${lesson?.video?.urlVimeo?.replace("https://vimeo.com/", "")}/config`
+        )
+
+        const data = await responseVimeo.json()
+        let urlVimeo = data?.request?.files?.hls?.cdns?.akfire_interconnect_quic?.url
+
+        responseTem[index] = {
+          ...lesson,
+          video: {
+            ...lesson?.video,
+            url: urlVimeo || lesson?.video?.urlVimeo
+          }
+        }
+      } else {
+        responseTem[index] = {
+          ...lesson,
+          video: {
+            ...lesson?.video,
+            url: lesson?.video?.urlVimeo
+          }
+        }
+      }
+    }))
+
+    yield put(courseActions.getCourseResponse({ ...response.payload, lessons: responseTem }));
   } else {
     const err = new TypeError(response?.payload?.error ? response.payload.error : 'ERROR_GET_COURSE')
     yield put(courseActions.getCourseResponse(err))
@@ -29,10 +59,13 @@ function* courseStart({ payload }) {
   const response = yield Api.put(`/course/course-start/${payload?.course?.id}`)
 
   if (response.ok) {
-    yield put(courseActions.courseStartResponse(response.payload));
-    yield put(push('/course-progress', { course: payload?.course }));
+
+    const profile = yield select((state) => state.user.profile)
+    yield put(courseActions.courseStartResponse(payload?.course?.id, profile))
+
+    payload.callback && payload.callback()
+
   } else {
-    payload.errorCallback()
     const err = new TypeError(response?.payload?.error || 'ERROR_COURSE_START')
     yield put(courseActions.courseStartResponse(err))
   }
