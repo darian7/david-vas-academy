@@ -13,12 +13,15 @@ export const FormLogin = (
   const { t } = useTranslation()
 
   const onFinish = (values) => {
-    dispatch(AuthActions.login(values?.username?.toLowerCase()?.trim(), values?.password))
+    dispatch(AuthActions.login(
+      values?.username?.toLowerCase()?.trim(),
+      values?.password
+    ))
   }
 
   return (
     <div className="form-login">
-      <p>Iniciar Sesión</p>
+      <p>{t(`header.item.login`)}</p>
 
       <Form
         name="normal_login"
@@ -34,11 +37,11 @@ export const FormLogin = (
           rules={[
             {
               required: true,
-              message: "Por favor ingresa usuario",
+              message: t(`error.login.NO_USERNAME`),
             },
           ]}
         >
-          <Input placeholder="Usuario" />
+          <Input placeholder={t(`button.user`)} />
         </Form.Item>
 
         <Form.Item
@@ -47,18 +50,18 @@ export const FormLogin = (
           rules={[
             {
               required: true,
-              message: "Por favor ingresa la contraseña",
+              message: t(`error.login.NO_PASSWORD`),
             },
           ]}
         >
-          <Input type="password" placeholder="Contraseña" />
+          <Input type="password" placeholder={t(`button.password`)} />
         </Form.Item>
 
         <Form.Item className="forgot" valuePropName="checked" noStyle>
           <span>
-            ¡Olvidaste la contraseña?{" "}
+            {t(`button.forgotPassword`)} {" "}
             <a className="login-form-forgot" href="/">
-              Clic aquí
+              {t(`button.clickHere`)}
             </a>
           </span>
         </Form.Item>
@@ -70,14 +73,18 @@ export const FormLogin = (
             className="login-form-button"
           >
             {loading && <SpinIndicator />}
-            {!loading && "Ingresar"}
+            {!loading && t(`button.entry`)}
           </Button>
         </Form.Item>
-          
-        {error?.login && <div className="ant-form-item-explain big-error"> {t(`error.login.${error?.login}`)} </div>}
+
+        {error?.login &&
+          <div className="ant-form-item-explain big-error">
+            {t(`error.login.${error?.login}`)}
+          </div>
+        }
 
         <Form.Item>
-          ¿No tienes cuenta? <a href="/">Regístrate aquí</a>
+          {t(`button.notAccount`)} <a href="/">{t(`button.signHere`)}</a>
         </Form.Item>
       </Form>
 

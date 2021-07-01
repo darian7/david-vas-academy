@@ -11,7 +11,8 @@ const header = {
     log_out: 'Cerrar sesión',
     memories: 'Memorias',
     events: 'Eventos FEX',
-    live: "En vivo"
+    live: "En vivo",
+    login: 'Iniciar sesión',
   },
   profile: {
     hi: 'Hola'
@@ -61,42 +62,6 @@ const scenes = {
     profession: 'Profesión',
     city: 'Ciudad',
     employmentSituation: 'Situación laboral'
-  },
-  quiz: {
-    next: "Siguiente",
-    close: "Cerrar",
-    back: "Atrás",
-    update: 'Actualizar',
-    next_lesson: 'Siguiente Lección',
-    next_module: 'Siguiente Módulo',
-    next_course: 'Más Cursos',
-    quiz_module: 'Quiz final',
-    view_lesson: 'Ver lección',
-    try_again: 'Intentar de nuevo',
-    quiz_correct: 'Haz finalizado esta lección',
-    quiz_wrong: 'Intentalo de nuevo',
-    quiz_final_correct: 'Haz finalizado este módulo',
-    quiz_final_wrong: 'Intentalo de nuevo'
-  },
-  frequent_questions: {
-    theme: 'Tema'
-  },
-  memories: {
-    header: 'Memorias',
-    sub_header: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec arcu lectus, cursus et fringilla rutrum massa. Etiam ante odio, ullamcorper nec rutrum a, gravida vitae elit.',
-    memory: 'Memoria',
-    live: "En vivo"
-  },
-  tutorials: {
-    header: 'Tutoriales',
-    goTo: 'Ir a tutorial',
-  },
-  tools: {
-    header: 'Herramientas',
-    goTo: 'Ir a herramienta',
-  },
-  events: {
-    click_here: 'Clic Aquí',
   }
 }
 
@@ -121,7 +86,12 @@ const button = {
   logout: 'Cerrar sesión',
   account: 'Mi cuenta',
   go_to: 'Ir a',
-  reset_course: 'Reiniciar curso'
+  reset_course: 'Reiniciar curso',
+  entry: "Ingresar",
+  forgotPassword: "¡Olvidaste la contraseña?",
+  clickHere: "Clic aquí",
+  notAccount: "¿No tienes cuenta?",
+  signHere: "Regístrate aquí"
 }
 
 export const es = {

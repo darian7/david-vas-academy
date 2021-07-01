@@ -1,7 +1,6 @@
 import { FormLogin } from "../../../components/FormLogin/FormLogin";
 import { SocialButtons } from "../../../components/SocialButtons/SocialButtons";
 
-
 import LogoDV from "../../../assets/login/Logo-DV.png";
 import LogoTrader from "../../../assets/login/Logo-Trader-Expert.png";
 
