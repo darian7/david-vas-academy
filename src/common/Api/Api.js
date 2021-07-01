@@ -13,13 +13,13 @@ export class Api {
 
         if (!Array.isArray(data[key])) {
           const isFile = data[key] && data[key].size
-          const isJson = typeof data[key] === 'object'
+          const isJson = typeof data[key] == 'object'
 
           dataBody.append(key, isFile || !isJson ? data[key] : JSON.stringify(data[key]));
         } else
           data[key].forEach(item => {
             const isFile = item && item.size
-            const isJson = typeof item === 'object'
+            const isJson = typeof item == 'object'
 
             dataBody.append(key, isFile || !isJson ? item : JSON.stringify(item))
           })
@@ -38,7 +38,7 @@ export class Api {
         }),
       body: dataBody
     }).then(async response => {
-      if (response.status === 401) {
+      if (response.status == 401) {
         store.dispatch(auth.logout());
         return response;
       }
@@ -56,13 +56,13 @@ export class Api {
 
         if (!Array.isArray(data[key])) {
           const isFile = data[key] && data[key].size
-          const isJson = typeof data[key] === 'object'
+          const isJson = typeof data[key] == 'object'
 
           dataBody.append(key, isFile || !isJson ? data[key] : JSON.stringify(data[key]));
         } else
           data[key].forEach(item => {
             const isFile = item && item.size
-            const isJson = typeof item === 'object'
+            const isJson = typeof item == 'object'
 
             dataBody.append(key, isFile || !isJson ? item : JSON.stringify(item))
           })
@@ -81,7 +81,7 @@ export class Api {
         }),
       body: dataBody
     }).then(async response => {
-      if (response.status === 401) {
+      if (response.status == 401) {
         store.dispatch(auth.logout());
         return response;
       }
@@ -97,7 +97,7 @@ export class Api {
         'Authorization': `Bearer ${Token.getToken()}`
       }
     }).then(async response => {
-      if (response.status === 401) {
+      if (response.status == 401) {
         store.dispatch(auth.logout());
         return response;
       }
@@ -117,7 +117,7 @@ export class Api {
         'Authorization': `Bearer ${Token.getToken()}`
       }
     }).then(async response => {
-      if (response.status === 401) {
+      if (response.status == 401) {
         store.dispatch(auth.logout());
         return response;
       }

@@ -1,20 +1,20 @@
 import { put, takeLatest, all } from 'redux-saga/effects';
 import Api from '../../common/Api/Api'
 import { auth } from "./AuthActions"
-import { user as userActions } from "../User/UserActions"
 import { push } from 'react-router-redux';
 import { Token } from '../../common/Storage/Token';
 
 function* login({ payload }) {
-  const response = yield Api.post("/auth/login", payload.data)
+  
+  const { payload: response, ok } = yield Api.post("/auth/login", payload)
 
-  if (response.ok) {
+  if (ok) {
+    Token.setToken('local', response.payload)
+    yield put(auth.loginResponse(response.payload))
+    yield put(push('/courses'))
 
-    Token.setToken('local', response.payload.token)
-    yield put(auth.loginResponse(response.payload.token));
-    yield put(push('/courses'));
   } else {
-    const err = new TypeError(response?.payload?.error ? response.payload.error : 'ERROR_LOGIN')
+    const err = new TypeError(response?.error || 'ERROR_LOGIN')
     yield put(auth.loginResponse(err))
   }
 }
