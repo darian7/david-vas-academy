@@ -5,19 +5,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { auth as AuthActions } from "../../services/Auth/AuthActions";
 import { SpinIndicator } from "../SpinIndicator/SpinIndicator";
 
-export const FormLogin = (
-) => {
-
-  const dispatch = useDispatch()
-  const { loading, error } = useSelector(state => state.auth)
-  const { t } = useTranslation()
+export const FormLogin = () => {
+  const dispatch = useDispatch();
+  const { loading, error } = useSelector((state) => state.auth);
+  const { t } = useTranslation();
 
   const onFinish = (values) => {
-    dispatch(AuthActions.login(
-      values?.username?.toLowerCase()?.trim(),
-      values?.password
-    ))
-  }
+    dispatch(
+      AuthActions.login(
+        values?.username?.toLowerCase()?.trim(),
+        values?.password
+      )
+    );
+  };
 
   return (
     <div className="form-login">
@@ -57,16 +57,13 @@ export const FormLogin = (
           <Input type="password" placeholder={t(`button.password`)} />
         </Form.Item>
 
-        <Form.Item className="forgot" valuePropName="checked" noStyle>
-          <span>
-            {t(`button.forgotPassword`)} {" "}
+        <Form.Item className="btn-login">
+          <span className="span">
+            {t(`button.forgotPassword`)}{" "}
             <a className="login-form-forgot" href="/">
               {t(`button.clickHere`)}
             </a>
           </span>
-        </Form.Item>
-
-        <Form.Item className="btn-login">
           <Button
             type="primary"
             htmlType="submit"
@@ -75,19 +72,16 @@ export const FormLogin = (
             {loading && <SpinIndicator />}
             {!loading && t(`button.entry`)}
           </Button>
-        </Form.Item>
-
-        {error?.login &&
-          <div className="ant-form-item-explain big-error">
-            {t(`error.login.${error?.login}`)}
-          </div>
-        }
-
-        <Form.Item>
-          {t(`button.notAccount`)} <a href="/">{t(`button.signHere`)}</a>
+          {error?.login && (
+            <div className="ant-form-item-explain big-error">
+              {t(`error.login.${error?.login}`)}
+            </div>
+          )}
+          <span>
+            {t(`button.notAccount`)} <a href="/">{t(`button.signHere`)}</a>
+          </span>
         </Form.Item>
       </Form>
-
     </div>
   );
 };
