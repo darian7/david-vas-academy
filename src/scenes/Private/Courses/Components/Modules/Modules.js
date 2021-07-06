@@ -3,15 +3,21 @@ import { Collapse } from "antd";
 
 const { Panel } = Collapse;
 
-export const Modules = ({ setCourse, setLesson }) => {
+export const Modules = ({
+  setCourse,
+  setLesson
+}) => {
   const { courses, loading: loadingCourse } = useSelector(
     (state) => state.course
   );
-  const text = `A dog is a type of domesticated animal.`;
 
   const changeCourse = (key) => {
+    if (!key)
+      return
+
     const findCourse = courses?.find((course) => course?.id == key);
     setCourse(findCourse);
+    
   };
 
   return (

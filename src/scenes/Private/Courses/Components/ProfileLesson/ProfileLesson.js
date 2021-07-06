@@ -5,18 +5,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { video as videoActions } from "../../../../../services/Video/VideoActions";
 import { course as courseActions } from "../../../../../services/Course/CourseActions";
 
-export const ProfileLesson = ({ isLesson, isCourse: course }) => {
-  const [isDuration, setDuration] = useState(0);
+export const ProfileLesson = ({ 
+  isLesson, 
+  isCourse: course 
+}) => {
+  const dispatch = useDispatch();
   const { loading: loadingCourse } = useSelector((state) => state.course);
   const { loading } = useSelector((state) => state.video);
   const { profile } = useSelector((state) => state.user);
-  const dispatch = useDispatch();
+  
+  const [isDuration, setDuration] = useState(0);
 
   const handleVideoView = (view) => {
     if (view && isLesson?.video?.users?.length == 0 && !loading.video_start) {
       startVideo(isLesson);
     }
-  };
+  }
 
   const startVideo = (lesson) => {
     if (!loading?.video_start) {
@@ -29,7 +33,7 @@ export const ProfileLesson = ({ isLesson, isCourse: course }) => {
         )
       );
     }
-  };
+  }
 
   const succesVideoStart = (isLesson) => {
     dispatch(
@@ -42,7 +46,7 @@ export const ProfileLesson = ({ isLesson, isCourse: course }) => {
         ),
       })
     );
-  };
+  }
 
   return (
     <div className="profile-lesson">

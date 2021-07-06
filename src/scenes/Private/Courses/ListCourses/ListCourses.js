@@ -14,17 +14,17 @@ import { SocialButtons } from '../../../../components/SocialButtons/SocialButton
 import logo from "../../../../assets/login/Logo-Trader-Expert.png";
 import logoDV from "../../../../assets/login/Logo-DV.png";
 
-export const ListCourses = () => {
+export const ListCourses = ({
+}) => {
+
   const dispatch = useDispatch();
   const { t } = useTranslation();
+  
   const [isLesson, setLesson] = useState();
   const [isCourse, setCourse] = useState();
   const { courses, loading: loadingCourse } = useSelector(
     (state) => state.course
   );
-
-  console.log("course:", isCourse);
-  console.log("lesson:", isLesson);
 
   useEffect(() => {
     dispatch(courseActions.getCourses());
