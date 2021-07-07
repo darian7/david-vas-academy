@@ -15,7 +15,7 @@
       width: 90%;
       height: 80px;
       margin-top: 50px;
-      border-bottom: 2px solid #00a715;
+      border-bottom: 2px solid $line-logo;
 
       .logo {
         display: flex;
@@ -28,7 +28,7 @@
 
       button {
         background: transparent;
-        color: #00a715;
+        color: $line-logo;
         height: 30px;
       }
     }
@@ -40,7 +40,9 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border-left: 1px solid #ffffff;
+    border-left: 1px solid $primary;
+    background-color: #000000;
+    height: auto;
 
     .logo-dv {
       display: flex;
@@ -61,28 +63,47 @@
         flex-direction: column;
         height: 100%;
 
+        .ant-collapse-content-box {
+          padding: 16px;
+          gap: 10px;
+          display: flex;
+          flex-direction: column;
+        }
+
         .ant-collapse.ant-collapse-icon-position-right {
           background: transparent;
-          color: #ffff;
+          color: $primary;
           height: 100%;
           border: transparent;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
 
           .ant-collapse-item {
-            border-bottom: 1px solid #00aa16 !important;
+            border-bottom: 2px solid $btn-line-form !important;
+            width: 90%;
 
             .ant-collapse-header {
-              color: #fafafa !important;
+              color: $primary !important;
               font-weight: 600;
-              font-size: 18px;
+              font-size: 20px;
+              padding: 12px 0;
+              padding-right: 25px;
+
+              span.anticon.anticon-right.ant-collapse-arrow {
+                font-size: 14px;
+                right: 5px;
+              }
             }
 
             .ant-collapse-content.ant-collapse-content-active {
               background: transparent;
-              color: #b9b9b9;
-              line-height: 25px;
+              color: $social;
+              line-height: 22px;
               font-weight: 400;
-              font-size: 13px;
+              font-size: 14px;
               font-style: italic;
+              border-top: 2px solid #00aa16 !important;
             }
           }
         }
@@ -96,6 +117,10 @@
       align-items: center;
       height: 200px;
       box-shadow: 0px -6px 6px #ffffff29;
+
+      .social-buttons {
+        height: 60%;
+      }
     }
   }
 }

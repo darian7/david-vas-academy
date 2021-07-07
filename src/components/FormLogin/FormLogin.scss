@@ -1,25 +1,33 @@
 .form-login {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding-top: 30px;
   width: 100%;
   height: 60%;
-  gap: 40px;
   p {
     font-size: 27px;
     color: $primary;
-    font-weight: 300;
+    font-weight: 500;
     border-bottom: 2px solid $primary;
   }
 
   form#normal_login {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 80%;
     flex-direction: column;
+
+    .username {
+      margin-bottom: 50px;
+    }
+
+    .password {
+      .ant-form-item-explain.ant-form-item-explain-error {
+        padding-top: 15px;
+      }
+    }
 
     .ant-form-item-explain.ant-form-item-explain-error {
       color: #ff4352;
@@ -30,7 +38,7 @@
     .ant-row.ant-form-item.username,
     .ant-row.ant-form-item.password {
       display: flex;
-      height: 50px;
+      height:45px;
       width: 100%;
 
       .ant-col.ant-form-item-control,
@@ -40,8 +48,8 @@
       input#normal_login_password {
         display: flex;
         flex-direction: column;
-        font: 18px;
-        font-weight: 300;
+        font-size: 26px;
+        font-weight: 500;
         gap: 10px;
         height: 100%;
         width: 100%;
@@ -55,25 +63,23 @@
       }
     }
     .span {
-      color: #fff;
+      color: $login-links;
+      font-weight: 400;
       font-size: 15px;
-      padding-bottom: 30px;
+      padding-bottom: 40px;
       a.login-form-forgot {
         color: $btn-line-form;
         font-size: 15px;
-        font-style: italic;
+        font-style: italic;text-decoration: underline;
       }
     }
 
     .ant-row.ant-form-item.btn-login {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
-      height: 50%;
+      justify-content: space-between;
       width: 100%;
-      .ant-col.ant-form-item-control {
-        gap: 10px;
-      }
+      
 
       .ant-form-item-control-input,
       .ant-form-item-control-input-content,
@@ -86,10 +92,10 @@
       }
 
       button.ant-btn.ant-btn-primary.login-form-button {
-        background-color: #00aa16;
-        border: 1px solid #707070;
+        background-color: $btn-line-form;
+        border: 1px solid $border-btn;
         border-radius: 14px;
-        color: #fefefe;
+        color: $primary;
         font-size: 27px;
         height: 52px;
         font-weight: 500;
@@ -100,14 +106,14 @@
     }
 
     .ant-form-item-control-input-content {
-      color: #fefefe;
+      color: $login-links;
+      font-weight: 500;
       font-size: 15px;
       flex-direction: column;
-      
 
       a {
         font-size: 15px;
-        color: #00aa16;
+        color: $btn-line-form;
         font-style: italic;
       }
     }
