@@ -16,7 +16,7 @@ function* videoStart({ payload }) {
 }
 
 function* getVideosCategorys({ payload }) {
-  const response = yield Api.get(`/video/get-video-date/${payload?.categoryId}`)
+  const response = yield Api.get(`/video/get-video-date/${payload?.categoryId}`, undefined, undefined)
 
   if (response.ok) {
     yield put(videoActions.getVideosCategorysResponse(response.payload));
@@ -27,7 +27,7 @@ function* getVideosCategorys({ payload }) {
 }
 
 function* getVideoLive({ payload }) {
-  const response = yield Api.get(`/video/get-video-live`)
+  const response = yield Api.get(`/video/get-video-live`, undefined, undefined)
 
   if (response.ok) {
     yield put(videoActions.getVideoLiveResponse(response.payload));

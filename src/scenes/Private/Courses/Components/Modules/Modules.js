@@ -26,7 +26,7 @@ export const Modules = ({
         {courses?.map((course, i) => (
           <Panel key={course?.id} header={course?.title?.es} key={course?.id}>
             {course?.lessons?.map((lesson) => (
-              <div key={lesson?.id} onClick={() => setLesson(lesson)}>
+              <div style={{ cursor: "pointer" }} key={lesson?.id} onClick={() => setLesson(lesson)}>
                 - {lesson?.title?.es}
               </div>
             ))}

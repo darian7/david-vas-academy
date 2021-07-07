@@ -6,7 +6,7 @@ import { Token } from '../../common/Storage/Token';
 
 function* login({ payload }) {
   
-  const { payload: response, ok } = yield Api.post("/auth/login", payload)
+  const { payload: response, ok } = yield Api.post("/auth/login", payload, undefined)
 
   if (ok) {
     Token.setToken('local', response.payload)

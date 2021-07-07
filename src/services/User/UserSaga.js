@@ -4,7 +4,7 @@ import { user as userActions } from "./UserActions"
 
 function* getUser({ payload }) {
 
-  const response = yield Api.get("/user/get-user")
+  const response = yield Api.get("/user/get-user", undefined, undefined)
 
   if (response.ok) {
     yield put(userActions.getUserResponse(response.payload.user));
