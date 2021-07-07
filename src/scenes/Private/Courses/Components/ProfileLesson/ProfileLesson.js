@@ -52,8 +52,8 @@ export const ProfileLesson = ({
     <div className="profile-lesson">
       <div className="title">
         <span className="title_box">
-          <h1>{course?.title?.es}</h1>
-          <h2>{course?.subtitle?.es}</h2>
+          <h1>{course?.title?.es} / {isLesson?.title?.es}</h1>
+          <h2>{isLesson?.description?.es}</h2>
         </span>
       </div>
 
