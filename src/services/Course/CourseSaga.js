@@ -3,7 +3,7 @@ import Api from '../../common/Api/Api'
 import { course as courseActions } from "./CourseActions"
 
 function* getCourses({ payload }) {
-  const response = yield Api.get("/course/get-all", payload.query)
+  const response = yield Api.get("/course/get-all", payload.query, undefined)
 
   if (response.ok) {
     yield put(courseActions.getCoursesResponse(response.payload.courses));
@@ -14,7 +14,7 @@ function* getCourses({ payload }) {
 }
 
 function* getCourse({ payload }) {
-  const response = yield Api.get(`/course/get-progress-course/${payload.id}`)
+  const response = yield Api.get(`/course/get-progress-course/${payload.id}`, undefined, undefined)
 
   if (response.ok) {
 
@@ -56,7 +56,7 @@ function* getCourse({ payload }) {
 }
 
 function* courseStart({ payload }) {
-  const response = yield Api.put(`/course/course-start/${payload?.course?.id}`)
+  const response = yield Api.put(`/course/course-start/${payload?.course?.id}`, undefined, undefined)
 
   if (response.ok) {
 
