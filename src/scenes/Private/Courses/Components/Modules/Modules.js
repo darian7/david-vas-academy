@@ -9,7 +9,7 @@ export const Modules = ({
 }) => {
   const { courses, loading: loadingCourse } = useSelector(
     (state) => state.course
-  );
+  )
 
   const changeCourse = (key) => {
     if (!key)
@@ -17,8 +17,8 @@ export const Modules = ({
 
     const findCourse = courses?.find((course) => course?.id == key);
     setCourse(findCourse);
-    
-  };
+
+  }
 
   return (
     <div className="modules">
@@ -27,7 +27,7 @@ export const Modules = ({
           <Panel key={course?.id} header={course?.title?.es} key={course?.id}>
             {course?.lessons?.map((lesson) => (
               <div key={lesson?.id} onClick={() => setLesson(lesson)}>
-                - {lesson?.description?.es}
+                - {lesson?.title?.es}
               </div>
             ))}
           </Panel>
