@@ -5,22 +5,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { video as videoActions } from "../../../../../services/Video/VideoActions";
 import { course as courseActions } from "../../../../../services/Course/CourseActions";
 
-export const ProfileLesson = ({ 
-  isLesson, 
-  isCourse: course 
-}) => {
+export const ProfileLesson = ({ isLesson, isCourse: course }) => {
   const dispatch = useDispatch();
   const { loading: loadingCourse } = useSelector((state) => state.course);
   const { loading } = useSelector((state) => state.video);
   const { profile } = useSelector((state) => state.user);
-  
+
   const [isDuration, setDuration] = useState(0);
 
   const handleVideoView = (view) => {
     if (view && isLesson?.video?.users?.length == 0 && !loading.video_start) {
       startVideo(isLesson);
     }
-  }
+  };
 
   const startVideo = (lesson) => {
     if (!loading?.video_start) {
@@ -33,7 +30,7 @@ export const ProfileLesson = ({
         )
       );
     }
-  }
+  };
 
   const succesVideoStart = (isLesson) => {
     dispatch(
@@ -46,13 +43,15 @@ export const ProfileLesson = ({
         ),
       })
     );
-  }
+  };
 
   return (
     <div className="profile-lesson">
       <div className="title">
         <span className="title_box">
-          <h1>{course?.title?.es} / {isLesson?.title?.es}</h1>
+          <h1>
+            {course?.title?.es} / {isLesson?.title?.es}
+          </h1>
           <h2>{isLesson?.description?.es}</h2>
         </span>
       </div>
@@ -61,8 +60,7 @@ export const ProfileLesson = ({
         {isLesson?.video?.urlVimeo && (
           <div className="video-p">
             <ReactPlayer
-              width={950}
-              height={680}
+              className="vp"
               playing={true}
               controls={true}
               url={isLesson?.video?.urlVimeo}
