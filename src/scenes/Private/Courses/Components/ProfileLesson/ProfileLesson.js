@@ -61,7 +61,7 @@ export const ProfileLesson = ({
         {isLesson?.video?.urlVimeo && (
           <div className="video-p">
             <ReactPlayer
-              width={1000}
+              width={950}
               height={680}
               playing={true}
               controls={true}

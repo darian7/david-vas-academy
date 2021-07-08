@@ -38,7 +38,7 @@
     .ant-row.ant-form-item.username,
     .ant-row.ant-form-item.password {
       display: flex;
-      height:45px;
+      height: 45px;
       width: 100%;
 
       .ant-col.ant-form-item-control,
@@ -55,6 +55,7 @@
         width: 100%;
         background-color: transparent;
         border: transparent;
+        color: $primary;
       }
 
       .ant-form-item-control-input-content {
@@ -70,7 +71,8 @@
       a.login-form-forgot {
         color: $btn-line-form;
         font-size: 15px;
-        font-style: italic;text-decoration: underline;
+        font-style: italic;
+        text-decoration: underline;
       }
     }
 
@@ -79,7 +81,6 @@
       flex-direction: column;
       justify-content: space-between;
       width: 100%;
-      
 
       .ant-form-item-control-input,
       .ant-form-item-control-input-content,
