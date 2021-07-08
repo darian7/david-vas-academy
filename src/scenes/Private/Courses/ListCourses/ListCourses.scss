@@ -6,15 +6,15 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    width: 80%;
+    width: 75%;
 
     .header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
       width: 90%;
-      height: 80px;
-      margin-top: 50px;
+      height: 170px;
+      padding-bottom: 10px;
       border-bottom: 2px solid $line-logo;
 
       .logo {
@@ -31,17 +31,22 @@
         color: $line-logo;
         height: 30px;
       }
+
+      button:hover{
+        font-weight: 600;
+      }
     }
   }
 
   .content-modules {
-    width: 20%;
+    width: 427px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     border-left: 1px solid $primary;
     background-color: #000000;
+    opacity: 1;
     height: auto;
 
     .logo-dv {
@@ -49,7 +54,7 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      height: 165px;
+      height: 221px;
       box-shadow: 0px 6px 6px #ffffff29;
     }
 
@@ -64,8 +69,8 @@
         height: 100%;
 
         .ant-collapse-content-box {
-          padding: 16px;
-          gap: 10px;
+          padding: 45px 10px 25px 0px;
+          gap: 25px;
           display: flex;
           flex-direction: column;
         }
@@ -80,19 +85,21 @@
           align-items: center;
 
           .ant-collapse-item {
-            border-bottom: 2px solid $btn-line-form !important;
-            width: 90%;
+            border-bottom: transparent !important;
+            width: 80%;
 
             .ant-collapse-header {
               color: $primary !important;
               font-weight: 600;
-              font-size: 20px;
-              padding: 12px 0;
-              padding-right: 25px;
+              font-size: 30px;
+              padding: 0px 20px 0px 0px;
+              border-bottom: 2px solid #027f11;
+              opacity: 1;
+              letter-spacing: 0px;
 
               span.anticon.anticon-right.ant-collapse-arrow {
-                font-size: 14px;
-                right: 5px;
+                font-size: 20px;
+                right: 0px;
               }
             }
 
@@ -101,9 +108,9 @@
               color: $social;
               line-height: 22px;
               font-weight: 400;
-              font-size: 14px;
+              font-size: 22px;
               font-style: italic;
-              border-top: 2px solid #00aa16 !important;
+              border-top: transparent;
             }
           }
         }
