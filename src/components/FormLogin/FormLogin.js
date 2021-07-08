@@ -59,10 +59,10 @@ export const FormLogin = () => {
 
         <Form.Item className="btn-login">
           <span className="span">
-            {t(`button.forgotPassword`)}{" "}
-            <a className="login-form-forgot" href="/">
+            {/* {t(`button.forgotPassword`)}{" "} */}
+            {/* <a className="login-form-forgot" href="/">
               {t(`button.clickHere`)}
-            </a>
+            </a> */}
           </span>
           <Button
             type="primary"
@@ -77,9 +77,9 @@ export const FormLogin = () => {
               {t(`error.login.${error?.login}`)}
             </div>
           )}
-          <span>
+          {/* <span>
             {t(`button.notAccount`)} <a href="/">{t(`button.signHere`)}</a>
-          </span>
+          </span> */}
         </Form.Item>
       </Form>
     </div>

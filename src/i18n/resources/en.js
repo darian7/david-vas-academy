@@ -1,67 +1,67 @@
-const general_error = 'Sorry we have a problem, please try again later'
+const general_error = 'Lo sentimos tenemos un problema, intentelo más tarde'
 
 const header = {
   item: {
-    courses: 'Courses',
-    class_live: 'Live classes',
-    leadership: 'Leadership',
-    tutorials: 'Tutorials',
-    tools: 'Tools',
-    questions_frequent: 'Frequently asked questions',
-    log_out: 'Log Out',
-    memories: 'Memories',
-    events: 'FEX Events',
-    live: "Live",
-    login: 'Login'
+    courses: 'Cursos',
+    class_live: 'Clases en vivo',
+    leadership: 'Liderazgo',
+    tutorials: 'Tutoriales',
+    tools: 'Herramientas',
+    questions_frequent: 'Preguntas frecuentes',
+    log_out: 'Cerrar sesión',
+    memories: 'Memorias',
+    events: 'Eventos FEX',
+    live: "En vivo",
+    login: 'Iniciar sesión',
   },
   profile: {
-    hi: 'Hi'
+    hi: 'Hola'
   }
 }
 
 const scenes = {
   courses: {
-    welcome: 'Welcome',
-    welcome_first_paragraph_first: 'Access the academic and information content that',
-    welcome_first_paragraph_second: 'has created for you.',
-    welcome_second_paragraph: 'We want you to start or boost your digital business venture with these.',
-    modules: 'Modules',
-    hours: 'Hours and',
-    minute: 'Minute',
+    welcome: 'Bienvenid@',
+    welcome_first_paragraph_first: 'Accede a los contenidos académicos y de información que',
+    welcome_first_paragraph_second: 'ha creado para ti.',
+    welcome_second_paragraph: 'Queremos que con estos, inicies o impulses tu emprendimiento en negocios digitales.',
+    modules: 'Módulos',
+    hours: 'Horas y',
+    minute: 'Minutos',
     min: 'min',
-    start_course: "Start course",
-    continue_course: 'Continue course',
-    course_progress: "Course Progress",
-    course_detail: "Course Detail"
+    start_course: "Empezar curso",
+    continue_course: 'Continuar curso',
+    course_progress: "Progreso del curso",
+    course_detail: "Detalles del curso",
   },
   modules: {
-    modules: 'Modules',
-    module: 'Module',
-    lessons: 'Lessons',
-    theme_summary: 'Theme summary',
+    modules: 'Módulos',
+    module: 'Módulo',
+    lessons: 'Lecciones',
+    theme_summary: 'Resumen del tema',
     quiz: 'Quiz',
-    files: 'Files',
-    correct: '¡Correct!',
-    wrong: '¡Wrong!',
-    confirm: 'Confirm',
+    files: 'Archivos',
+    correct: '¡Correcta!',
+    wrong: '¡Incorrecta!',
+    confirm: 'Confirmar',
   },
   profileCourse: {
-    course_details: 'Course details',
-    characteristics: 'Characteristics',
-    modules: 'Modules',
-    hours: 'Hours',
-    available: "Available in {{unlockDays}} day{{plural}}",
+    course_details: 'Detalles del curso',
+    characteristics: 'Características',
+    modules: 'Módulos',
+    hours: 'Horas',
+    available: "Disponible en {{unlockDays}} día{{plural}}",
   },
   profileUser: {
-    data: 'Personal data',
-    age: 'Age',
-    civilStatus: 'Civil status',
-    gender: 'Gender',
-    studies: 'Level of studies',
-    country: 'Country',
-    profession: 'Profession',
-    city: 'City',
-    employmentSituation: 'Employment situation'
+    data: 'Datos personales',
+    age: 'Edad',
+    civilStatus: 'Estado civil',
+    gender: 'Género',
+    studies: 'Nivel de estudios',
+    country: 'País',
+    profession: 'Profesión',
+    city: 'Ciudad',
+    employmentSituation: 'Situación laboral'
   }
 }
 
@@ -69,29 +69,29 @@ const error = {
   general_error,
   login: {
     ERROR_LOGIN: general_error,
-    USER_NOT_EXIST: 'User does not exist',
-    NO_PASSWORD: 'Please input your password!',
-    NO_USERNAME: 'Please input your username!',
-    USER_INACTIVED: 'The user is inactive.'
+    USER_NOT_EXIST: 'El usuario no existe',
+    NO_USERNAME: 'Por favor introduce tu usuario',
+    NO_PASSWORD: 'Por favor digita una contraseña',
+    USER_INACTIVED: 'El usuario se encuentra inactivo.'
   }
 }
 
 const button = {
-  login: 'Login',
-  user: 'User',
-  password: 'Password',
-  start: 'Start',
-  continue: 'Continue',
-  begin: 'Begin',
-  logout: 'Sign off',
-  account: 'My account',
-  go_to: 'Go to',
-  reset_course: 'Restart course',
-  entry: "Entry",
-  forgotPassword: "¡Forgot your password?",
-  clickHere: "Click here",
-  notAccount: "You do not have an account?",
-  signHere: "Sign up here"
+  login: 'Iniciar sesión',
+  user: 'Usuario',
+  password: 'Contraseña',
+  start: 'Iniciar',
+  continue: 'Continuar',
+  begin: 'Empezar',
+  logout: 'Cerrar sesión',
+  account: 'Mi cuenta',
+  go_to: 'Ir a',
+  reset_course: 'Reiniciar curso',
+  entry: "Ingresar",
+  forgotPassword: "¡Olvidaste la contraseña?",
+  clickHere: "Clic aquí",
+  notAccount: "¿No tienes cuenta?",
+  signHere: "Regístrate aquí"
 }
 
 export const en = {
