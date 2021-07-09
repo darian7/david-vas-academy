@@ -1,4 +1,4 @@
-import fb from "../../assets/social/facebook.svg";
+import yt from "../../assets/social/youtube.svg";
 import wa from "../../assets/social/whatsapp.svg";
 import ig from "../../assets/social/instagram.svg";
 
@@ -12,13 +12,13 @@ export const SocialButtons = () => {
       </div>
 
       <div className="icons">
-        <div className="icons_box fb">
+        <div className="icons_box yt">
           <a
-            href="https://www.facebook.com/Davidvasfex"
+            href="https://www.youtube.com/channel/UCXvuTwfpRPAwlctJn3YKM9w/videos"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={fb} alt="Facebook" />
+            <img src={yt} alt="YouTube" />
           </a>
         </div>
         <div className="icons_box wa">
