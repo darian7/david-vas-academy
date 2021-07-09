@@ -30,6 +30,7 @@
         background: transparent;
         color: $line-logo;
         height: 30px;
+        font-size: 18px;
       }
 
       button:hover{
@@ -91,7 +92,7 @@
             .ant-collapse-header {
               color: $primary !important;
               font-weight: 600;
-              font-size: 30px;
+              font-size: 22px;
               padding: 0px 20px 0px 0px;
               border-bottom: 2px solid #027f11;
               opacity: 1;
@@ -108,7 +109,7 @@
               color: $social;
               line-height: 22px;
               font-weight: 400;
-              font-size: 22px;
+              font-size: 18px;
               font-style: italic;
               border-top: transparent;
             }
