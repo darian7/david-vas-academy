@@ -19,7 +19,7 @@ export const ListCourses = ({
 
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  
+
   const [isLesson, setLesson] = useState();
   const [isCourse, setCourse] = useState();
   const { courses, loading: loadingCourse } = useSelector(
@@ -45,6 +45,7 @@ export const ListCourses = ({
   return (
     <div className="list-courses">
       <div className="content-player">
+
         <div className="header">
           <div className="logo">
             <img src={logo} alt="Trader-Expert" />
@@ -53,6 +54,17 @@ export const ListCourses = ({
             {t(`button.logout`)} <LogoutOutlined />
           </button>
         </div>
+
+        {courses?.length == 0 &&
+          <h3 style={{
+            color: "#00aa15",
+            fontSize: 18,
+            marginTop: 40
+          }}>
+            No hay cursos
+          </h3>
+        }
+
         <ProfileLesson isLesson={isLesson} isCourse={isCourse} />
       </div>
 
@@ -69,10 +81,10 @@ export const ListCourses = ({
           />
         </div>
         <div className="social-media">
-          <SocialButtons/>
+          <SocialButtons />
         </div>
-        
+
       </div>
-    </div>
+    </div >
   );
 };
