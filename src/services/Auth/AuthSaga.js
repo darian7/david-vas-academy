@@ -5,8 +5,12 @@ import { push } from 'react-router-redux';
 import { Token } from '../../common/Storage/Token';
 
 function* login({ payload }) {
-  
-  const { payload: response, ok } = yield Api.post("/auth/login", payload, undefined)
+
+  const { payload: response, ok } = yield Api.post(
+    "/auth/login",
+    { ...payload, platformWeb: true },
+    undefined
+  )
 
   if (ok) {
     Token.setToken('local', response.payload)
