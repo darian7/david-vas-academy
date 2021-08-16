@@ -3,7 +3,7 @@ import Api from '../../common/Api/Api'
 import { course as courseActions } from "./CourseActions"
 
 function* getCourses({ payload }) {
-  const response = yield Api.get("/course/get-all", payload.query, undefined)
+  const response = yield Api.get("/course/get-all-web", payload.query, undefined)
 
   if (response.ok) {
     yield put(courseActions.getCoursesResponse(response.payload.courses));
