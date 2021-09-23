@@ -68,11 +68,12 @@ export const ListCourses = ({
         <ProfileLesson isLesson={isLesson} isCourse={isCourse} />
       </div>
 
-      <div className="content-modules">
-        <div className="logo-dv">
+      <div className="content-modules" style={{ height: "auto" }}  >
+        <div className="logo-dv" style={{ marginBottom: 20 }}>
           <img src={logoDV} alt="David-Vas" />
         </div>
-        <div className="mod-box">
+        
+        <div className="mod-box" style={{ height: "auto" }}  >
           <Modules
             isLesson={isLesson}
             isCourse={isCourse}
@@ -80,6 +81,7 @@ export const ListCourses = ({
             setLesson={setLesson}
           />
         </div>
+        
         <div className="social-media">
           <SocialButtons />
         </div>
