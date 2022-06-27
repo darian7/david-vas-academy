@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
-import { LogoutOutlined } from "@ant-design/icons";
 
+import { LogoutOutlined, AppleOutlined } from "@ant-design/icons";
 import { auth as authActions } from "../../../../services/Auth/AuthActions";
 import { course as courseActions } from "../../../../services/Course/CourseActions";
 import { Modules } from "../Components/Modules/Modules";
@@ -15,8 +15,8 @@ import logo from "../../../../assets/login/Logo-Trader-Expert.png";
 import logoDV from "../../../../assets/login/Logo-DV.png";
 
 export const ListCourses = ({
+  history
 }) => {
-
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
@@ -42,14 +42,22 @@ export const ListCourses = ({
     dispatch(authActions.logout());
   };
 
+  const pushTraidingView = () => {
+    history.push("/trading-view")
+  };
+
   return (
     <div className="list-courses">
       <div className="content-player">
-
         <div className="header">
           <div className="logo">
             <img src={logo} alt="Trader-Expert" />
           </div>
+
+          <button onClick={pushTraidingView}>
+            {`trading view`} <AppleOutlined />
+          </button>
+
           <button onClick={goLogout}>
             {t(`button.logout`)} <LogoutOutlined />
           </button>
