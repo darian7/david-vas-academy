@@ -9,22 +9,18 @@ import { course as courseActions } from "../../../../services/Course/CourseActio
 import { Modules } from "../Components/Modules/Modules";
 import { ProfileLesson } from "../Components/ProfileLesson/ProfileLesson";
 
-import { SocialButtons } from '../../../../components/SocialButtons/SocialButtons'
+import { SocialButtons } from "../../../../components/SocialButtons/SocialButtons";
 
 import logo from "../../../../assets/login/Logo-Trader-Expert.png";
 import logoDV from "../../../../assets/login/Logo-DV.png";
 
-export const ListCourses = ({
-}) => {
-
+export const ListCourses = ({}) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
   const [isLesson, setLesson] = useState();
   const [isCourse, setCourse] = useState();
-  const { courses, loading: loadingCourse } = useSelector(
-    (state) => state.course
-  );
+  const { courses } = useSelector((state) => state.course);
 
   useEffect(() => {
     dispatch(courseActions.getCourses());
@@ -45,7 +41,6 @@ export const ListCourses = ({
   return (
     <div className="list-courses">
       <div className="content-player">
-
         <div className="header">
           <div className="logo">
             <img src={logo} alt="Trader-Expert" />
@@ -55,25 +50,27 @@ export const ListCourses = ({
           </button>
         </div>
 
-        {courses?.length == 0 &&
-          <h3 style={{
-            color: "#00aa15",
-            fontSize: 18,
-            marginTop: 40
-          }}>
+        {courses?.length == 0 && (
+          <h3
+            style={{
+              color: "#00aa15",
+              fontSize: 18,
+              marginTop: 40,
+            }}
+          >
             No hay cursos
           </h3>
-        }
+        )}
 
         <ProfileLesson isLesson={isLesson} isCourse={isCourse} />
       </div>
 
-      <div className="content-modules" style={{ height: "auto" }}  >
+      <div className="content-modules" style={{ height: "auto" }}>
         <div className="logo-dv" style={{ marginBottom: 20 }}>
           <img src={logoDV} alt="David-Vas" />
         </div>
-        
-        <div className="mod-box" style={{ height: "auto" }}  >
+
+        <div className="mod-box" style={{ height: "auto" }}>
           <Modules
             isLesson={isLesson}
             isCourse={isCourse}
@@ -81,12 +78,11 @@ export const ListCourses = ({
             setLesson={setLesson}
           />
         </div>
-        
+
         <div className="social-media">
           <SocialButtons />
         </div>
-
       </div>
-    </div >
+    </div>
   );
 };

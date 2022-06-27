@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 
 import { history } from '../../index'
 import { ListCourses } from './Courses/ListCourses/ListCourses';
 
 export const Private = (
 ) => {
-  const dispatch = useDispatch()
-
   useEffect(() => {
   }, [])
 

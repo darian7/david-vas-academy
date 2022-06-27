@@ -8,7 +8,7 @@ function* login({ payload }) {
 
   const { payload: response, ok } = yield Api.post(
     "/auth/login",
-    { ...payload, platformWeb: true },
+    { ...payload },
     undefined
   )
 
@@ -23,7 +23,7 @@ function* login({ payload }) {
   }
 }
 
-function* logout({ }) {
+function* logout() {
   localStorage.removeItem('token');
   yield put(push('/'));
 }
